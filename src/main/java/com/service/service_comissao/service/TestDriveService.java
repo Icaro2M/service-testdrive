@@ -21,7 +21,7 @@ public class TestDriveService {
     public TestDrive scheduleTestDrive(TestDrive testDrive, Long vehicleId) {
         
 
-        String vehicleServiceUrl = "http://localhost:8081/vehicles/" + vehicleId;
+        String vehicleServiceUrl = "http://localhost:3000/test/" + vehicleId;
         String vehicleName = restTemplate.getForObject(vehicleServiceUrl, String.class);
 
         
