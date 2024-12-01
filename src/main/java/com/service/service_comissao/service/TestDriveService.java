@@ -22,7 +22,7 @@ public class TestDriveService {
         
 
         String vehicleServiceUrl = "http://localhost:3000/test/" + vehicleId;
-        String vehicleName = restTemplate.getForObject(vehicleServiceUrl, String.class);
+        String vehicleName = restTemplate.postForObject(vehicleServiceUrl,null, String.class);
 
         
         testDrive.setVehicleName(vehicleName);
