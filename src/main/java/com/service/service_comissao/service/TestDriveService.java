@@ -23,7 +23,7 @@ public class TestDriveService {
         
 
         String vehicleServiceUrl = "https://av3-projetos-production.up.railway.app/produtos/" + vehicleId;
-         Map<String, Object> response = restTemplate.postForObject(vehicleServiceUrl, null, Map.class);
+         Map<String, Object> response = restTemplate.getForObject(vehicleServiceUrl, Map.class);
         String vehicleName = response != null ? (String) response.get("nome") : "";
 
         
