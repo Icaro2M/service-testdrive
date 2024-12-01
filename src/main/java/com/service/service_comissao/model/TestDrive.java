@@ -26,7 +26,7 @@ public class TestDrive {
     private String vehicleName;
 
 
-
+    public TestDrive() {}
     private TestDrive(Builder builder) {
         this.id = builder.id;
         this.date = builder.date;
