@@ -22,7 +22,7 @@ public class TestDriveController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity<TestDrive> scheduleTestDrive(@RequestBody TestDriveRequest request) {
         TestDrive testDrive = new TestDrive();
         testDrive.setDate(request.getDate());
