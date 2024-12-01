@@ -24,9 +24,10 @@ public class TestDriveController {
 
     @PostMapping("/post")
     public ResponseEntity<TestDrive> scheduleTestDrive(@RequestBody TestDriveRequest request) {
-        TestDrive testDrive = new TestDrive();
-        testDrive.setDate(request.getDate());
-        testDrive.setClientName(request.getClientName());
+       TestDrive testDrive = new TestDrive.Builder()
+        .date(request.getDate())            
+        .clientName(request.getClientName()) 
+        .build();
 
         TestDrive saved = service.scheduleTestDrive(testDrive, request.getVehicleId());
         return ResponseEntity.ok(saved);
