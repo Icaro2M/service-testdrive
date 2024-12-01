@@ -21,8 +21,9 @@ public class TestDriveService {
     public TestDrive scheduleTestDrive(TestDrive testDrive, Long vehicleId) {
         
 
-        String vehicleServiceUrl = "https://testeconexao-production.up.railway.app/test/" + vehicleId;
-        String vehicleName = restTemplate.postForObject(vehicleServiceUrl,null, String.class);
+        String vehicleServiceUrl = "https://av3-projetos-production.up.railway.app/produtos/" + vehicleId;
+         Map<String, Object> response = restTemplate.postForObject(vehicleServiceUrl, null, Map.class);
+        String vehicleName = response != null ? (String) response.get("nome") : "";
 
         
         testDrive.setVehicleName(vehicleName);
